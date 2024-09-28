@@ -36,7 +36,7 @@ public class SecurityConfiguration {
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(authorizeRequests -> {
 
-                    authorizeRequests.requestMatchers(HttpMethod.POST, TRANSACTIONS.concat(SUPPLY))
+                    authorizeRequests.requestMatchers(HttpMethod.POST, SUPPLY.concat(ADD))
                             .hasRole(WAREHOUSE_WORKER);
 
                     authorizeRequests.requestMatchers(HttpMethod.POST, TRANSACTIONS.concat(BUYS))
